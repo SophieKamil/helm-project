@@ -1,4 +1,4 @@
-namespace: sophie
+namespace: sophie-task
 
 wordpress:
     deployment:
