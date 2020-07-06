@@ -1,20 +1,25 @@
-namespace: sophie-task
+ingressname:
+  domain: tls-ingress
 
-wordpress:
-    deployment:
-        image: wordpress:4.8-apache
-        replicaCount: 2
-    service:
-        type: LoadBalancer
-        port: 80
-    
-mysql:
-    deployment:
-        image: mysql:5.6
-        replicaCount: 1
-    service:
-        type: ClusterIP
-        port: 3306
-    pvc:
-        accessMode: ReadWriteOnce
-        storage: 2Gi
+
+service:
+  name: mysql-lb
+
+
+mysqlimage:
+  name: mysql
+ 
+
+statefulset:
+  name: wordpress-task
+
+wpimage:
+  name: wordpress
+  tag: 4.8-apache
+
+
+dpname:
+  name: wordpress-task
+
+servicenodeport:
+  name: task-lb  
